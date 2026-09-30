@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* =========================================================
+   THEME FOUNDATION: CRISP WHITE THEME & VIVID DARK THEME
+   ========================================================= */
+
+html:not(.dark) {
+  color-scheme: light;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.dark {
+  color-scheme: dark;
+  background-color: #070b14;
+  color: #f8fafc;
+}
+
+html.dark body {
+  background-color: #070b14;
+  color: #f8fafc;
+}
+
+/* Form controls in light mode */
+html:not(.dark) input:not([type="checkbox"]),
+html:not(.dark) select,
+html:not(.dark) textarea {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+html:not(.dark) input:focus,
+html:not(.dark) select:focus,
+html:not(.dark) textarea:focus {
+  border-color: #0284c7;
+  outline: none;
+}
+
+/* Form controls in dark mode - high visibility, luminous focus & clear contrast */
+html.dark input:not([type="checkbox"]),
+html.dark select,
+html.dark textarea {
+  background-color: #0d1526;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+  outline: none;
+}
+
+/* High contrast & content visibility enhancement for dark theme */
+html.dark .text-slate-400 {
+  color: #94a3b8;
+}
+
+html.dark .border-slate-800 {
+  border-color: #1e293b;
+}
+
+/* Enhanced visibility for dark mode scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
